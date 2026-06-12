@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arogya Naturals</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f8f8f8;
+}
+
+header{
+    background:#2D5A3D;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+header h1{
+    margin-bottom:5px;
+}
+
+header p{
+    font-size:14px;
+}
+
+.welcome{
+    padding:15px;
+    text-align:center;
+    background:#ffffff;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    text-align:center;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card h3{
+    margin-top:15px;
+}
+
+.price{
+    color:#2D5A3D;
+    font-size:22px;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+.pack{
+    color:#666;
+    margin-top:5px;
+}
+
+.btn{
+    display:inline-block;
+    margin:15px;
+    padding:12px 20px;
+    background:#2D5A3D;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+}
+
+.soon{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:220px;
+    background:#eeeeee;
+    color:#777;
+    font-weight:bold;
+}
+
+footer{
+    margin-top:30px;
+    text-align:center;
+    padding:20px;
+    color:#666;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🌿 Arogya Naturals</h1>
+    <p>Pure Herbs. Infinite Care.</p>
+</header>
+
+<div class="welcome">
+    <h3>
+        Welcome,
+        <span id="customerName"></span>
+    </h3>
+</div>
+
+<div class="products">
+
+    <div class="card">
+
+        <img src="Soap.jpg" alt="Kuppaimeni Soap">
+
+        <h3>Kuppaimeni Herbal Soap</h3>
+
+        <div class="price">
+            ₹130
+        </div>
+
+        <div class="pack">
+            Pack of 2
+        </div>
+
+        <a href="shopping.html" class="btn">
+            View Product
+        </a>
+
+    </div>
+
+    <div class="card">
+        <div class="soon">
+            Product Launching Soon
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="soon">
+            Product Launching Soon
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="soon">
+            Product Launching Soon
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    Made with ♾️ Infinity
+</footer>
+
+<script>
+
+let name =
+localStorage.getItem("customerName");
+
+if(name){
+    document.getElementById("customerName")
+    .innerText = name;
+}
+
+</script>
+
+</body>
+</html>

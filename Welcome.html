@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome | Arogya Naturals</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#fdf8f0,#e8f5e9);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.container{
+    background:white;
+    width:90%;
+    max-width:420px;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+.logo{
+    font-size:32px;
+    color:#2D5A3D;
+    margin-bottom:10px;
+}
+
+h1{
+    color:#2D5A3D;
+    margin-bottom:10px;
+}
+
+.tagline{
+    color:#777;
+    margin-bottom:25px;
+}
+
+input{
+    width:100%;
+    padding:14px;
+    margin-top:12px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:16px;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    margin-top:20px;
+    border:none;
+    border-radius:10px;
+    background:#2D5A3D;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#1f412b;
+}
+
+.footer{
+    position:fixed;
+    bottom:15px;
+    width:100%;
+    text-align:center;
+    color:#666;
+    font-size:14px;
+}
+
+.error{
+    color:red;
+    margin-top:10px;
+    font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="logo">🌿</div>
+
+    <h1>Arogya Naturals</h1>
+
+    <p class="tagline">
+        Pure Herbs. Infinite Care.
+    </p>
+
+    <input
+        type="text"
+        id="name"
+        placeholder="Enter Your Name">
+
+    <input
+        type="tel"
+        id="mobile"
+        placeholder="Enter Mobile Number">
+
+    <button onclick="enterStore()">
+        Enter Store
+    </button>
+
+    <p class="error" id="error"></p>
+
+</div>
+
+<div class="footer">
+    Made with ♾️ Infinity
+</div>
+
+<script>
+
+function enterStore(){
+
+    let name =
+        document.getElementById("name").value.trim();
+
+    let mobile =
+        document.getElementById("mobile").value.trim();
+
+    if(name === ""){
+        document.getElementById("error").innerText =
+        "Please enter your name";
+        return;
+    }
+
+    if(mobile.length < 10){
+        document.getElementById("error").innerText =
+        "Please enter a valid mobile number";
+        return;
+    }
+
+    localStorage.setItem("customerName",name);
+    localStorage.setItem("customerMobile",mobile);
+
+    window.location.href="index.html";
+}
+
+</script>
+
+</body>
+</html>
